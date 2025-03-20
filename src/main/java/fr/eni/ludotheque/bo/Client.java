@@ -27,4 +27,7 @@ public class Client {
 
     @Column(nullable = false, length = 50)
     @NonNull private String email;
+
+    @OneToOne(cascade = CascadeType. PERSIST)
+    private Adresse adresse;
 }
