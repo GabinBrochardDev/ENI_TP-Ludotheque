@@ -11,7 +11,9 @@ import lombok.*;
 @Entity
 @Table(name = "ADRESSES")
 public class Adresse {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, length = 50)
