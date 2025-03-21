@@ -3,6 +3,7 @@ package fr.eni.ludotheque.bo;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -48,4 +49,8 @@ public class Jeu {
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
     private List<Genre> genres;
+
+    @OneToMany(mappedBy = "jeu", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Exemplaire> exemplaires = new ArrayList<>();
+
 }
