@@ -23,14 +23,15 @@ public class LudothequeApplication implements CommandLineRunner {
 
 
     public void run(String... args) throws Exception {
-        Client cli = new Client("DUPOND", "Jean", "0000000000", "email@test.com");
-        Adresse adr = new Adresse("rue léo la grange", "79000", "Niort");
-
-        cliService.ajouterClient(cli, adr);
-        System.out.println("Client ajouté avec succès !");
-
-        // Optional<Client> clientRecherche = cliService.getById(1);
-        System.out.println("Recherche client id=1 : " + cliService.getById(1).get().getNom() );
+//        Client cli = new Client("DUPOND", "Jean", "0000000000", "email@test.com");
+//        Adresse adr = new Adresse("rue léo la grange", "79000", "Niort");
+//
+//        cliService.ajouterClient(cli, adr);
+//        System.out.println("Client ajouté avec succès !");
+//
+//        // Optional<Client> clientRecherche = cliService.getById(1);
+//        System.out.println("Recherche client id=1 : " + cliService.getById(1).get().getNom() );
+//        System.out.println("Recherche client name=DUPOND : " + cliService.getByNom("DUPOND").get().getPrenom() );
     }
 
 }

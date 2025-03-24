@@ -10,4 +10,6 @@ public interface ClientService {
     void ajouterClient(Client client, Adresse adresse);
 
     Optional<Client> getById(int id);
+
+    Optional<Client> getByNom(String nom);
 }
