@@ -12,4 +12,6 @@ public interface ClientService {
     Optional<Client> getById(int id);
 
     Optional<Client> getByNom(String nom);
+
+    void modifierClient(Client client, Adresse adresse);
 }

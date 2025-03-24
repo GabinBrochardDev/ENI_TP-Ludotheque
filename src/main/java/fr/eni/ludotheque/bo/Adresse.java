@@ -22,7 +22,7 @@ public class Adresse {
     @Column(nullable = false, length = 5)
     @NonNull private String code_postal;
 
-    @Column(nullable = false, length = 5)
+    @Column(nullable = false, length = 50)
     @NonNull private String ville;
 
     @OneToOne(mappedBy = "adresse")
