@@ -8,6 +8,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -21,8 +22,6 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void ajouterClient(Client client, Adresse adresse) {
-
-        client.setAdresse(adresseRepository.save(adresse));
         clientRepository.save(client);
     }
 
@@ -32,18 +31,26 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Optional<Client> getByNom(String nom) {
+    public List<Client> getByNom(String nom) {
         return clientRepository.findByNomContainingIgnoreCase(nom);
     }
 
 
     @Override
-    public void modifierClient(Client client, Adresse adresse) {
+    public void modifierClient(Client client) {
 
-        if(clientRepository.findById(client.getId()).isPresent()) {
-            client.setAdresse(adresseRepository.save(adresse));
-            clientRepository.save(client);
+        if(client.getId() == null){
+            throw new IllegalStateException();
         }
+        clientRepository.save(client);
+    }
+
+    @Override
+    public void modifierAdresse(Adresse adresse) {
+        if(adresse.getId() == null) {
+            throw new IllegalStateException();
+        }
+        adresseRepository.save(adresse);
     }
 
 }

@@ -3,6 +3,7 @@ package fr.eni.ludotheque.bll;
 import fr.eni.ludotheque.bo.Adresse;
 import fr.eni.ludotheque.bo.Client;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ClientService {
@@ -11,7 +12,9 @@ public interface ClientService {
 
     Optional<Client> getById(int id);
 
-    Optional<Client> getByNom(String nom);
+    List<Client> getByNom(String nom);
 
-    void modifierClient(Client client, Adresse adresse);
+    void modifierClient(Client client);
+
+    void modifierAdresse(Adresse adresse);
 }
