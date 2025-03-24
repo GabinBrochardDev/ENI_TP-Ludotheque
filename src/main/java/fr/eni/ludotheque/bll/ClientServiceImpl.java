@@ -8,6 +8,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -23,4 +25,11 @@ public class ClientServiceImpl implements ClientService {
         client.setAdresse(adresseRepository.save(adresse));
         clientRepository.save(client);
     }
+
+    @Override
+    public Optional<Client> getById(int id) {
+        return clientRepository.findById(id);
+    }
+
+
 }
