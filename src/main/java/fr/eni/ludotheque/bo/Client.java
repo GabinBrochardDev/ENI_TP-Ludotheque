@@ -28,6 +28,7 @@ public class Client {
     @Column(nullable = false, length = 50)
     @NonNull private String email;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
+    @OneToOne(cascade = CascadeType.ALL,
+    orphanRemoval = true, optional = false)
     private Adresse adresse;
 }
