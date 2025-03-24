@@ -34,4 +34,6 @@ public class LudothequeApplication implements CommandLineRunner {
 //        System.out.println("Recherche client name=DUPOND : " + cliService.getByNom("DUPOND").get().getPrenom() );
     }
 
+
+
 }
