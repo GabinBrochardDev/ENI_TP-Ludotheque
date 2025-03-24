@@ -31,5 +31,10 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findById(id);
     }
 
+    @Override
+    public Optional<Client> getByNom(String nom) {
+        return clientRepository.findByNomContainingIgnoreCase(nom);
+    }
+
 
 }
