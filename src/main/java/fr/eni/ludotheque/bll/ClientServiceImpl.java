@@ -36,7 +36,14 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findByNomContainingIgnoreCase(nom);
     }
 
-    
 
+    @Override
+    public void modifierClient(Client client, Adresse adresse) {
+
+        if(clientRepository.findById(client.getId()).isPresent()) {
+            client.setAdresse(adresseRepository.save(adresse));
+            clientRepository.save(client);
+        }
+    }
 
 }
