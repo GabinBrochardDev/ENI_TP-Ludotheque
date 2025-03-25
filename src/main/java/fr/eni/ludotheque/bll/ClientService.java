@@ -8,11 +8,11 @@ import java.util.Optional;
 
 public interface ClientService {
 
-    void ajouterClient(Client client, Adresse adresse);
+    void ajouterClient(Client client);
 
-    Optional<Client> getById(int id);
+    Client trouverClientParId(Integer id);
 
-    List<Client> getByNom(String nom);
+    List<Client> trouverClientsParNom(String nom);
 
     void modifierClient(Client client);
 
